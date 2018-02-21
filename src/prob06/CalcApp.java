@@ -9,7 +9,17 @@ public class CalcApp {
 		
 		while( true ) {
 			String input = scanner.nextLine();
+
+			if("quit".equals( input )){
+				break;
+			}
+			
 			String[] exp = input.split(" ");
+			
+			if( exp.length != 3 ) {
+				System.out.println(" 알 수 없는 식입니다.");
+				continue;
+			}
 			
 			Arithmatic a = null;
 			switch(exp[1]){
@@ -29,14 +39,14 @@ public class CalcApp {
 					a = new Div(Integer.parseInt(exp[0]), Integer.parseInt(exp[2]));
 					System.out.println(a.calculate());
 					break;
-					
+				default:
+					System.out.println(" 알 수 없는 연산자입니다.");
+					break;
 				/*  코드를 완성 합니다 */
 			}
 			
-			String check = scanner.nextLine();
-			if(check.equals("quit")){
-				break;
-			}
+			
+			
 		}
 		
 		scanner.close();
