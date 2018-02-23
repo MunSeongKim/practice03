@@ -22,21 +22,22 @@ public class CalcApp {
 			}
 			
 			Arithmatic a = null;
+			int op1 = Integer.parseInt(exp[0]), op2 = Integer.parseInt(exp[2]);
 			switch(exp[1]){
 				case "+":
-					a = new Add(Integer.parseInt(exp[0]), Integer.parseInt(exp[2]));
+					a = new Add(op1, op2);
 					System.out.println(a.calculate());
 					break;
 				case "-":
-					a = new Sub(Integer.parseInt(exp[0]), Integer.parseInt(exp[2]));
+					a = new Sub(op1, op2);
 					System.out.println(a.calculate());
 					break;
 				case "*":
-					a = new Mul(Integer.parseInt(exp[0]), Integer.parseInt(exp[2]));
+					a = new Mul(op1, op2);
 					System.out.println(a.calculate());
 					break;
 				case "/":
-					a = new Div(Integer.parseInt(exp[0]), Integer.parseInt(exp[2]));
+					a = new Div(op1, op2);
 					System.out.println(a.calculate());
 					break;
 				default:
@@ -44,13 +45,7 @@ public class CalcApp {
 					break;
 				/*  코드를 완성 합니다 */
 			}
-			
-			
-			
 		}
-		
 		scanner.close();
-
 	}
-
 }
